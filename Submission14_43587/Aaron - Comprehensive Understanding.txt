@@ -1,0 +1,17 @@
+1.
+Service adalah Helper Class yang mencakup value, function, atau fitur diinject dan digunakan oleh beberapa controller.
+
+Service sebenarnya tipikal class dengan tujuan yang lebih sempit dan terdefinisi dengan baik. Lebih spesifik, lebih rapi, lebih terstruktur, dan dapat bekerja dengan baik
+
+
+2.
+- Mengaktivasi Routing Angular
+- Menambah components yang akan di routing (minimal 2)
+- Import components nya pada AppRoutingModule
+- Untuk define basic route, import AppRoutingModule pada AppModule, dan tambahkan dalam array imports 
+- Import RouterModule dan Routes ke dalam routing module kita (Angular CLI melakukan ini secara otomatis)
+- Define routes kita ke dalam Routes array
+{ path: '...', component: '...' }
+
+- Menambah routes kita ke application dengan assign ke anchor tag dimana yang mau ditambah route nya (routerLink attribute)
+

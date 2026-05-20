@@ -1,0 +1,102 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link" href="#" (click)="tab=1">Forms</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#" (click)="tab=2">Data</a>
+  </li>
+</ul>
+
+<div *ngIf="tab==1" label="Tab 1">
+  <div class="container">
+    <form [formGroup]="dataForm" (ngSubmit) = "onSubmit()">
+      <div class="form-group">
+        <label>First Name: </label>
+        <input type="text" class="form-control" formControlName="fname"
+        [ngClass]="{ 'is-invalid': submitted && f['fname'].errors }"/>
+        <div *ngIf="submitted && f['fname'].errors" class="invalid-feedback">
+          <div *ngIf="f['fname'].errors.required">
+            First Name Field cannot be empty
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Last Name: </label>
+        <input type="text" class="form-control" formControlName="lname"
+        [ngClass]="{ 'is-invalid': submitted && f['lname'].errors }"/>
+        <div *ngIf="submitted && f['lname'].errors" class="invalid-feedback">
+          <div *ngIf="f['lname'].errors.required">
+            Last Name Field cannot be empty
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>NIM: </label>
+        <input type="text" class="form-control" formControlName="nim"
+        [ngClass]="{ 'is-invalid': submitted && f['nim'].errors }"/>
+        <div *ngIf="submitted && f['nim'].errors" class="invalid-feedback">
+          <div *ngIf="f['nim'].errors.required">
+              NIM Field cannot be empty
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email: </label>
+        <input type="text" class="form-control" formControlName="email"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"/>
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+          <div *ngIf="f['email'].errors.required">
+            Email Field cannot be empty
+          </div>
+          <div *ngIf="f['email'].errors.email">
+            Must Enter valid email
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Password: </label>
+        <input type="password" class="form-control" formControlName="password"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"/>
+        <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+          <div *ngIf="f['password'].errors.required">
+            Password Field cannot be empty
+          </div>
+          <div *ngIf="f['password'].errors.minlength">
+            The minimum passwords length is 8
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Confirm Password: </label>
+        <input type="password" class="form-control" formControlName="cpassword"
+        [ngClass]="{ 'is-invalid': submitted && f['cpassword'].errors }"/>
+        <div *ngIf="submitted && f['cpassword'].errors" class="invalid-feedback">
+          <div *ngIf="f['cpassword'].errors.required">
+            Confirm Password Field cannot be empty
+          </div>
+          <div *ngIf="f['cpassword'].errors.mustMatch">
+            Confirm Password must match Password
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-dark form-control">SetData</button>
+      </div>
+
+      <p>
+        Halo nama saya {{fname.value}} {[lname.value]} nim saya {{nim.value}}. 
+        Anda bisa contact saya dengan email {{email.value}}
+      </p>
+    </form>
+  </div>
+</div>
+
+<div *ngIf="tab==2" label="Tab 2">
+  <app-data></app-data>
+</div>
