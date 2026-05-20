@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mari Kenalan dengan JSON</title>
+
+        <script type="text/javascript">
+            let mahasiswa = {
+                nama: "John",
+                nim: "00000000001",
+                ukm: {
+                    utama: "jCafe",
+                    kedua: "Ulson"
+                }
+            }
+            let myJSON = JSON.stringify(mahasiswa);
+            console.log(myJSON);
+
+            let mymahasiswa = JSON.parse(myJSON);
+            console.log(mymahasiswa.nama+"("+mymahasiswa.nim+") memilih "+mymahasiswa.ukm.utama+" sebagai UKM utamanya. ");
+        
+        </script>
+    </head>
+    
+    <body>
+    </body>
+</html>

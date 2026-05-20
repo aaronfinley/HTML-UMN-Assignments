@@ -1,0 +1,38 @@
+[
+	{
+		"name":"iPhone xx",
+		"price":12800000,
+		"image":"pic1.jpg",
+		"seller":{
+			"name":"Malang Apple Inc.",
+			"location":"Malang"
+		}
+	},
+	{
+		"name":"Samsung Galaxy Sx",
+		"price":8000000,
+		"image":"pic2.jpg",
+		"seller":{
+			"name":"Samsung Seller",
+			"location":"Surabaya"
+		}
+	},
+	{
+		"name":"Razer Promax",
+		"price":400000,
+		"image":"pic3.jpg",
+		"seller":{
+			"name":"Andalanmu",
+			"location":"Tangerang"
+		}
+	},
+	{
+		"name":"Musuh Mr Bean",
+		"price":50000000,
+		"image":"pic4.jpg",
+		"seller":{
+			"name":"Mobil Old Corp.",
+			"location":"Jakarta"
+		}
+	}
+]

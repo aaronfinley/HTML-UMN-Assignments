@@ -1,0 +1,81 @@
+1. var
+-> Dapat diRe-Declare 
+contoh:
+var nama = 'Aaron';
+var nama = 'Finley';  //re-declare
+
+//variabel nama yang tadinya berisi value 'Aaron' menjadi 'Finley'
+
+-> Jika var declare di dalam block, dapat diakses dari luar block juga (Block Scope tidak berlaku)
+contoh:
+{
+  var x = 0;
+}
+// maka variabel x dapat diakses disini
+
+-> Re-Declare dalam Block yang sama diperbolehkan
+contoh:
+{
+  var x=1;
+  var x=2; // boleh, nilai x menjadi 2
+}
+
+--------------------------------------
+2. let
+-> Tidak dapat diRe-Declare
+contoh:
+let nama = 'Aaron';
+let nama = 'Finley';
+
+// akan muncul message
+Uncaught SyntaxError: Identifier 'score' has already been declared
+
+-> Jika let declare di dalam block, tidak dapat diakses dari luar block
+contoh:
+{
+  let x = 0;
+}
+// maka variabel x tidak dapat diakses disini
+
+-> Re-Declare diperbolehkan bila di Block yang berbeda
+contoh:
+let x = 1;
+{
+  let x = 2; // nilai x disini 2
+}
+// nilai x disini 1
+
+--------------------------------------
+3. const
+-> Tidak bisa diReassigned
+contoh:
+const x = 1;
+x = x + 2; // error
+
+-> Variabel harus memiliki value langsung ketika diDeclare
+contoh:
+const x = 1;
+
+//contoh berikut salah
+const x;
+x = 1;
+
+-> const dapat berupa array
+contoh:
+const x = [1,2,3];
+
+-> dapat mengubah element dan menambah element sebuah array, tetapi tidak bisa reassign array
+contoh:
+const x =[1,2,3];
+x[0] = 4; // array akan menjadi [4,2,3]
+x.push(5); // array akan menjadi [4,2,3,5]
+
+x = ["Apel","Anggur","Jeruk"]; //error
+
+-> aturan Block Scope const sama dengan let
+contoh:
+const x = 1;
+{
+  const x = 2; // value x disini adalah 2
+}
+// value x disini adalah 1

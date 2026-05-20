@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Challenge</title>
+        <link rel="stylesheet" href="main2.css" media="screen" title="no title" charset="utf-8">
+        <script>
+            var herolevel = 1;
+            var recruits = 0;
+            function onDocumentFinish(){
+                var hero = window.prompt('Hero, what is your name?')
+                console.log("Hero "+hero+" is ready for an adventure");
+                document.getElementById("HeroName").innerHTML = 'Name: ' +hero;
+                document.getElementById("formSubmit").onsubmit = function(form){
+                    form.preventDefault();
+                    let item = {
+                        name: '',
+                        level: '',
+                        class: '',
+                        isItemValid: function(){
+                            if(this.name !== '' && this.level !== '' && this.class !== ''){
+                                if(this.level <= herolevel)
+                                    return true;
+                                else{
+                                    console.log("You failed to recruit a Lv."+item.level+" "+item.class);
+                                    alert("Your level need to be higher than your recruits!");
+                                    return false;
+                                }
+                            }
+                            else{
+                                alert("All fields must not empty")
+                                return false;
+                            }
+                            
+                        },
+                        addToTable: function(){
+                            const tbody = document.getElementById("tableItem").querySelector("tbody");
+                            const newRow = document.createElement("tr");
+                            const nameCol = document.createElement("td");
+                            nameCol.appendChild(document.createTextNode(this.name));
+                            const levelCol = document.createElement("td");
+                            levelCol.appendChild(document.createTextNode(this.level));
+                            const classCol = document.createElement("td");
+                            classCol.appendChild(document.createTextNode(this.class));
+                        
+                            newRow.appendChild(nameCol);
+                            newRow.appendChild(levelCol);
+                            newRow.appendChild(classCol);
+
+                            tbody.appendChild(newRow);
+                        },
+                        fillProperty: function(dataSource){
+                            item.name = dataSource.target['Name'].value;
+                            item.level = dataSource.target['Level'].value;
+                            item.class = dataSource.target['Class'].value;
+                        }
+                    }
+                    item.fillProperty(form);
+                    if(item.isItemValid()){
+                        recruits = recruits +1;
+                        document.getElementById("recruits").innerHTML = 'Recruits:' +recruits;
+                        item.addToTable()
+                        document.getElementById("formSubmit").reset()
+                        console.log(item.name+" a Lv."+item.level+" "+item.class+" is recruited");
+                    }
+                }
+                document.getElementById("TrainHero").onclick = function(form){
+                        herolevel = herolevel + 1;
+                        document.getElementById("HeroLevel").innerHTML = "Level: "+herolevel;
+                        console.log("The hero's level is increased by 1");
+                }
+            }
+        </script>
+    </head>
+
+    <body onload="onDocumentFinish()">
+        <div class="col-12">
+            <div class="col-12 header">
+                <h3 id="HeroName" class="col-4">Name: </h3>
+                <h3 id="HeroLevel" class="col-4">Level: 1</h3>
+                <h3 id="recruits" class="col-4">Recruits: 0</h3>
+                <input type="submit" class="col-4" style="padding:10px" id="TrainHero" onclick="LevelUp()" value="Training"/>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-4 center">
+                <div class="col-12">
+                    <form id="formSubmit" onsubmit="submitItem()">
+                            <label for="Name" style="color: white;">Name</label>
+                            <input type="text" class="form-control" name="Name" id="Name"/>
+                            <label for="Level" style="color: white;">Level</label>
+                            <input type="number" class="form-control" name="Level" id="Level"/>
+                            <label for="Class" style="color: white;">Class</label>
+                            <select name="Class" class="form-control" id="Class">
+                                <option value="Swordman">Swordman</option>
+                                <option value="Paladin">Paladin</option>
+                                <option value="Archer">Archer</option>
+                                <option value="Thief">Thief</option>
+                                <option value="Magician">Magician</option>
+                                <option value="Summoner">Summoner</option>
+                                <option value="Warlock">Warlock</option>
+                                <option value="Bard">Bard</option>
+                            </select>
+                            <input type="submit" class="button col-12" id="btnSubmit" value="Recruit"/>
+                    </form>
+                </div>
+
+                <div class="col-12">
+                    <table id="tableItem" class="col-12">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Level</th>
+                                <th>Class</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-12 footer">
+                <h1>Created By Aaron Finley - 00000043587</h1>
+            </div>
+        </div>
+    </body>
+</html>
