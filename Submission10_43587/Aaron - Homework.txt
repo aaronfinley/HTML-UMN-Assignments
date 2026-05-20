@@ -1,0 +1,56 @@
+Pingendo merupakan Software gratis berbasis bootstrap yang mempermudah user merancang halaman web. Pingendo memiliki fitur drag & drop design.
+
+Pingendo memiliki interface:
+
+- Sections dan Components : tools yang dapat di-drag & drop ke dalam halaman kita
+
+- Toolbar : berisi basic commands, menampilkan text option saat mengetik, lalu juga dapat menampilkan demo tampilan halaman berbagai resolusi layar tanpa device aslinya (untuk membuat responsive)
+
+- Canvas : space untuk kita mengerjakan halaman web
+
+- Right inspectors : berisi konfigurasi elemen-elemen, style, dan basic SEO
+
+- Code : melihat dan mengedit HTML
+
+- Projects : melihat dan mengatur halaman-halaman project kita
+
+
+
+*Langkah-langkah:
+
+1. Memulai halaman project baru
+- dapat memulai project dengan single page atau blank project
+- memilih tempat directory mana untuk save file
+
+2. Membuka template
+- pada project panel, select foldernya untuk mengatur themes
+- untuk browse Template Library Pingendo, pilih Open in Pingendo.
+- pilih folder dan halaman yang ingin di-download dan di-list dalam project panel secara otomatis
+
+3. Membangun halaman web
+- Drag & Drop : Select ikon '+' pada panel kiri untuk melihat list sections dan components
+- dengan mudah drag elemen yang ingin dimasukkan ke canvas
+
+- Copy/Paste : komponen-komponen, grid elements dan semua sections dapat di-copy-paste dalam satu halaman atau ke file HTML lain.
+
+- Clone, Replicate, add child: dengan menggunakan fitur ini, mempercepat proses pembuatan web
+
+- Element Settings : terjadi perubahan dalam Selection tab ketika ingin mengedit sesuatu pada canvas
+
+- Code Editor : kita dapat membangun dan mendesign website tanpa coding, tapi dapat mengakses HTML source secara mudah untuk diketik, modif, copas, apapun dari HTML editor
+
+
+4. Memasukkan Theme
+- Theme Settings : untuk mengubah tampilan website (spaces, pewarnaan, fonts). Melakukan modifikasi pada menu Theme Inspector
+- kita mengedit 1 file .css dalam satu waktu. Dapat membuat sendiri juga
+- Custom CSS : select elemen yang mau dicustom, lihat Custom tab dibawah Selection inspector. Kita dapat menambah, modif, menghilangkan class. Dengan membuka Code panel, pada Sass source akan dapat dilihat codingan CSS yang telah ditulis dan dapat diedit
+
+- Font Settings : mengubah font melalui Theme Inspecor
+
+- Bootstrap Requirements : Theme Inspector menu akan memberi tahu CSS stylesheet dan versi Bootstrap yang sedang dipakai. Kita dapat browse dan import stylesheet lain. (<link> pada <head> HTML, @import pada Sass source)
+
+
+5. Publish
+- Membuka project kita dalam Project Panel, klik Publish di bawah.
+- menggunakan Netlify account karena Pingendo menggunakan platform Netlify untuk mengurus deploy dan hosting
+- untuk melakukan pengubahan web, klik URL pada project panel dan pilih Push Changes pad alist.

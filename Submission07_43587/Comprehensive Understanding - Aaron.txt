@@ -1,0 +1,112 @@
+1.
+Kelebihan:
+- Codingan jQuery lebih pendek dan simple dibanding vanilla js.
+
+- jQuery merupakan js library yang termasuk mudah dipakai untuk membuat fungsi yang kompleks dengan baris coding yang sedikit.
+
+- jQuery kompatibel dengan hampir seluruh browser
+
+- jQuery lebih banyak diminati oleh developer web saat ini
+
+Kekurangan:
+- Vanilla js hampir 25x lebih cepat dibanding jQuery.
+
+- Vanilla js tidak bergantung pada library dan kita mendevelop sendiri apa yang diperlukan
+
+- Vanilla js gratis secara mutlak karena tidak memakai library lain dan framework lain
+
+- Dalam sisi server hosting jika Request jQuery sangat banyak yang perlu ditangani, maka akan membebani server
+
+
+2.
+let request = new XMLHttpRequest();
+let url = 'www.budi.com/info-diri';
+request.open("POST", url, true);
+request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+request.send(JSON.stringify({nama:’Budi’, alamat:’Jl Merpati’, pekerjaan:’Programmer’});
+
+3.
+Callback Function adalah sebuah function yang dijalankan dalam function lain dengan memanggilnya dan bertindak sebagai argument function. Berguna untuk membuat coding program lebih singkat dan efisien.
+
+
+4.
+a. 
+<ul class="level-1">
+  <li class="item-i">I</li>
+  <li class="item-ii">II
+    <ul class="level-2">
+      <li class="item-a">A</li>
+      <li class="item-b">B
+        <ul class="level-3">
+          <li class="item-1">1</li>
+          <li class="item-2">2</li>
+          <li class="item-3">3</li>
+        </ul>
+      </li>
+      <li class="item-c">C</li>
+    </ul>
+  </li>
+  <li class="item-iii">III</li>
+</ul>
+
+jQuery : $( "ul.level-2" ).children().css( "background-color", "red" );
+
+-> mengambil anakan ul dengan class level-2 -> <li ..>A</li> <li ..>B</li>
+
+
+b.
+<p class="budi"></p>
+
+jQuery : $('.budi').html('<p>HELLO WORLD</p>');
+
+-> dengan class 'budi' maka akan diubah menjadi <p>HELLO WORLD</p> dalam html itu
+
+$(‘#wati’).val() 
+
+-> set value tertentu pada html yang memiliki id wati
+
+
+c.
+$("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+
+<div id="div1" style="width:80px;height:80px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:80px;height:80px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:80px;height:80px;display:none;background-color:blue;"></div>
+
+-> dengan id div1,div2,div3 akan melakukan fungsi fadeIn dalam html
+
+
+$("button").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+  });
+
+-> fadeOut kebalikan dengan fadeIn
+
+
+d.
+<button>Go</button>
+<p>Ready...</p>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+$( "button" ).on( "click", function() {
+  $( "p" ).append( "Started..." );
+ 
+  $( "div" ).each(function( i ) {
+    $( this ).fadeIn().fadeOut( 1000 * ( i + 1 ) );
+  });
+ 
+  $( "div" ).promise().done(function() {
+    $( "p" ).append( " Finished! " );
+  });
+});
+
+-> setelah button diklik, maka akan menjalankan function jquery step by step dulu, mulai dari p hingga div selesai maka function promise muncul ketika div selesai, menambahkan function append <p> pada html

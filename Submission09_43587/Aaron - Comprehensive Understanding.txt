@@ -1,0 +1,44 @@
+1.
+Digunakan untuk membuat page layout melalui baris-baris dan kolom-kolom. Cara Bootstrap Grid System bekerja:
+
+- Rows harus ditaruh antara .container atau .container-fluid untuk alignment dan padding yang rapi.
+- .row berguna untuk membuat grup kolom-kolom horizontal
+- Grid columns dibuat dengan menentukan jumlah 12 kolom yang tersedia 
+- Jika terdapat lebih dari 12 kolom dalam satu baris, maka masing-masing grup kolom yang kelebihan akan menjadi 1 unit dan pindah ke baris baru
+
+
+2.
+- Glyphicons: icon-icon yang dapat digunakan ke website secara graits karena Bootstrap.
+
+- Dropdowns: menu yang menampilkan list, toggleable
+
+- Button groups: sebuah group yang berisi seri-seri button. Contoh: Basic (.btn-group), toolbar (.btn-toolbar), sizing (.btn-group-sm,.btn-group-lg), dll
+
+- Button dropdowns: jenis button yang dapat menampilkan dropdown menu dengan menaruh diantara .btn-group
+
+- Input groups: extend form controls dengan menambah text atau button pada text-based <input>. Memakai .input-group dengan .input-group-addon atau .input-group-btn untuk prepend atau append element ke .form-control
+
+- Navs: base class .nav untuk navigation
+contoh: Tabs (.nav-tabs), pills (.nav-pills), dll
+
+- Navbar (Default) : responsive meta components yang membuat navigation headers untuk website kita. Toogleable
+
+- Pagination: digunakan untuk membuat halaman-halaman jika website memiliki multi-page
+
+- Badges: untuk highlight item baru atau unread dengan menambah <span class="badge"> ke links, bootstrap navs, dll
+
+- Alerts: macam-macam flexible alert message yang berisi feedback message untuk user actions
+
+
+3.
+- Dropdowns (dropdown.js): untuk menambah dropdown menu ke hampir apapun itu dengan simple plugin (navbar, tabs, pills)
+
+- Button (button.js): plugin yang menambahkan fungsionalitas dan button di bootstrap CSS
+
+- Collapse (collapse.js): menambah fungsi collapse pada elemen-elemen.
+
+- Tooltip (tooltip.js): memberi tampilan informasi text yang tampil saat cursor hover pada sebuah item.
+
+- Popover (popover.js): tooltip plugin yang memiliki konten lebih banyak (secondary information)
+
+- 
